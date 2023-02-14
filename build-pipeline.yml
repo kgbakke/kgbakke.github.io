@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-  test-env:
+  testenv:
     runs-on: ubuntu-latest
     steps:
       - name: "Hello world when it's Monday"
