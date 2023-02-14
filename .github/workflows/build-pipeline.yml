@@ -5,6 +5,11 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
+env:
+  FIRST_NAME: Mona
+  MIDDLE_NAME: The
+  LAST_NAME: Octocat
+
 
 jobs:
   build:
@@ -17,6 +22,13 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
+        
+  test-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Hello world when it's Monday"
+        run: echo "Hello $FIRST_NAME $MIDDLE_NAME $LAST_NAME, today is Monday!"
+    
   test:
     needs: build
     runs-on: ubuntu-latest
