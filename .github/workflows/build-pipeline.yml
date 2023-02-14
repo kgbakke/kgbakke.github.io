@@ -34,7 +34,7 @@ jobs:
   
       # Step 3 - Add tests and linting here
   deploy:
-    needs: test
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
